@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include "main.h"
+#include <stddef.h>
 
 /**
 *_printf- a function to print and output
@@ -10,7 +11,8 @@
 int _printf(const char *format, ...)
 {
 	va_list sd;
-	int x = 0, printed = 0;
+	int x = 0, y = 0, printed = 0;
+	char *s = NULL;
 
 	va_start(sd, format);
 
@@ -26,6 +28,20 @@ int _printf(const char *format, ...)
 			{
 				_putchar(va_arg(sd, int));
 				x++;
+			}
+			else if (format[x + 1] == 's')
+			{
+				x++;
+				s = va_arg(sd, char *);
+				for (y = 0; s[y] != '\0'; y++)
+				{
+					_putchar(s[y]);
+				}
+			}
+			else if (format[x + 1] == '%')
+			{
+				x++;
+				_putchar('%');
 			}
 		}
 

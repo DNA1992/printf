@@ -8,8 +8,8 @@
 
 int main(void)
 {
-	_printf("Hello %c world\n", 'A');
-	printf("Hello %c world\n", 'A');
+	_printf("%%\n");
+	printf("%%\n");
 
 	return (0);
 }
