@@ -21,12 +21,14 @@ int _printf(const char *format, ...)
 		if (format[x] != '%')
 		{
 			_putchar(format[x]);
+			printed++;
 		}
 		else
 		{
 			if (format[x + 1] == 'c')
 			{
 				_putchar(va_arg(sd, int));
+				printed++;
 				x++;
 			}
 			else if (format[x + 1] == 's')
@@ -36,12 +38,14 @@ int _printf(const char *format, ...)
 				for (y = 0; s[y] != '\0'; y++)
 				{
 					_putchar(s[y]);
+					printed++;
 				}
 			}
 			else if (format[x + 1] == '%')
 			{
 				x++;
 				_putchar('%');
+				printed++;
 			}
 		}
 
