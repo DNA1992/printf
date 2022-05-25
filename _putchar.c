@@ -2,6 +2,7 @@
 #include <unistd.h>
 /**
 *_putchar - function to write a character
+*@c:character format
 *Return: 1 on success
 */
 
